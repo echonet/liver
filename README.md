@@ -48,8 +48,10 @@ In your environment, run
 python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --manifest_path YOURMANIFEST PATH.csv
 ```
 
-Then
+Then, you need run below
 
 ```sh
 python predict.py --dataset YOUR HIGH-QUALITY-SUBCOSTAL-480640 DATASET --manifest_path YOURMANIFEST CSV --label SLD (OR cirrhosis)
 ```
+
+Finally, you get cirrhosis / SLD preds and can calculate AUC.
