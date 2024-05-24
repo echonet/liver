@@ -48,6 +48,8 @@ In your environment, run
 python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --manifest_path YOURMANIFEST PATH.csv
 ```
 
+Then
+
 ```sh
-python predict.py
+python predict.py --dataset YOUR HIGH-QUALITY-SUBCOSTAL-480640 DATASET --manifest_path YOURMANIFEST CSV --label SLD (OR cirrhosis)
 ```

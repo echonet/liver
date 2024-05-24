@@ -29,8 +29,8 @@ with torch.no_grad():
     args = parser.parse_args()   
     
     #Path to the model weights (View-classifier (VC) and Quality control model (QC))
-    view_classifier_weights_path = "/workspace/yuki/EchoNet-Liver/pretrained_models/subcostal_view_classifier_model.pt"
-    quality_control_model_weights_path = "/workspace/yuki/EchoNet-Liver/pretrained_models/quality_control_model.pt"
+    view_classifier_weights_path = "YOUR WORK PATH/subcostal_view_classifier_model.pt"
+    quality_control_model_weights_path = "YOUR WORK PATH/pretrained_models/quality_control_model.pt"
     
     data_path = args.dataset
     manifest_path = args.manifest_path
@@ -44,9 +44,10 @@ with torch.no_grad():
     
     if 'filename' in manifest.columns and manifest['filename'].str.contains('.avi').all() == False:
         manifest['filename'] = manifest['filename'].apply(lambda x: x + '.avi') 
-        
-    manifest['frames']=  manifest["filename"].apply(lambda x: get_frame_count(os.path.join(args.dataset, f"{x}")))
-    manifest = manifest[manifest['frames'] > 31]
+    
+    #If your dataset have a video with less than 32 frames, please remove it from the manifest file.
+    #manifest['frames']=  manifest["filename"].apply(lambda x: get_frame_count(os.path.join(args.dataset, f"{x}")))
+    #manifest = manifest[manifest['frames'] > 31]
     manifest.to_csv(manifest_path, index = False)
     
     #-----------------------------------------------------------------------------------------
@@ -82,7 +83,7 @@ with torch.no_grad():
     manifest_v1 = manifest.merge(df_preds, on="filename", how="inner").drop_duplicates('filename')
     manifest_v1.preds = manifest_v1.preds.apply(sigmoid)
     
-    manifest_v2 = manifest_v1[manifest_v1.preds > 0.8414]
+    manifest_v2 = manifest_v1[manifest_v1.preds > 0.8414] #This threshold is based on the best cut-off value in our dataset. 
     manifest_v2.to_csv(
         Path(os.path.dirname(os.path.abspath(__file__)))
         / Path("view_classification_predictions_above_threshold.csv"),
@@ -92,6 +93,7 @@ with torch.no_grad():
     #-----------------------------------------------------------------------------------------
     #Step 2: Quality Control
     print("---Step 2: Start Predict Quality Control Model")
+    #You must have the output csv file from Step 1
     manifest_step2 = pd.read_csv('view_classification_predictions_above_threshold.csv')
     manifest_step2.drop(columns = ['preds'], inplace = True) #You need Drop predict value on Step 1
     #load the dataset for Quality Control Model
@@ -127,7 +129,7 @@ with torch.no_grad():
     manifest_step2_v1 = manifest_step2.merge(df_preds, on="filename", how="inner").drop_duplicates('filename')
     manifest_step2_v1.preds = manifest_step2_v1.preds.apply(sigmoid)
     
-    manifest_step2_v2 = manifest_step2_v1[manifest_step2_v1.preds > 0.925]
+    manifest_step2_v2 = manifest_step2_v1[manifest_step2_v1.preds > 0.925] #This threshold is based on the best cut-off value in our dataset. 
     manifest_step2_v2 = manifest_step2_v2.drop_duplicates('filename').reset_index(drop=True)
     manifest_step2_v2.to_csv(
         Path(os.path.dirname(os.path.abspath(__file__)))
@@ -135,5 +137,8 @@ with torch.no_grad():
         index=False,
     )
     
-    print("★Predict Subcostal View-Classifier was done. See Output csv")
-    print("You can get high-quality subcostal videos file_path. In our experiment using external some blurred videos were remained. Please change cut-off value depending on your dataset.")
+    print("Predict Subcostal View-Classifier was done. See Output csv")
+    print("You can get high-quality subcostal videos file_path. In our experiment using external some blurred videos were remained.")
+    
+# SAMPLE SCRIPT
+# python classify_high_qauality_subcostal_videos.py --dataset YOUR ECHO DATA PATH --manifest_path  YOUR MANIFEST DATA PATH
