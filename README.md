@@ -31,15 +31,17 @@ pip install -r requirements.txt
 There are three models for Echo-Net Liver pipeline
 1. View-classification model
 2. Quality-control model
-3. Disease-Detection-Model 
+3. Disease-Detection-Model (cirrhosis model and SLD model) 
+
+you can get all four pretrained model in this repo (See prettrained_models)
 
 All you need to prepare is 
 - Dataset (112*112 avi video, all echocardiography views)
 - Manifest file (that include filename, label etc) 
 See sample_manifest_step1_and_2.csv
 
-- 480*640 subcostal echocardiography videos. (corresponding file name should be in output csv from Step 1and2 ) 
-For disease detection model (DenseNet), we used 480*640, not 112-112.
+- 480-640 subcostal echocardiography videos. (corresponding file name should be in output csv from Step 1and2 ) 
+For disease detection model (DenseNet), we used 480-640, not 112-112.
 
 In your environment, run
 ```sh
