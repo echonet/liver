@@ -36,22 +36,24 @@ There are three models for Echo-Net Liver pipeline
 you can get all four pretrained model in this repo (See prettrained_models)
 
 All you need to prepare is 
-- Dataset (112*112 avi video, all echocardiography views)
-- Manifest file (that include filename, label etc) 
-See sample_manifest_step1_and_2.csv
+- Dataset (112*112 avi video, all echocardiography views)  
+
+- Manifest file (that include filename, label etc)   
+See sample_manifest_step1_and_2.csv  
 
 - 480-640 subcostal echocardiography videos. (corresponding file name should be in output csv from Step 1and2 ) 
 For disease detection model (DenseNet), we used 480-640, not 112-112.
 
-In your environment, run
+![Procedure](https://github.com/echonet/liver/blob/main/repo_EchoNet_Pipeline.png)
+In your environment, run this to classify high-quality subcostal.
 ```sh
 python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --manifest_path YOURMANIFEST PATH.csv
 ```
 
-Then, you need run below
+Then, you need run below to Predict Cirrhosis or SLD (predict.py). Then you can calculate AUC in your dataset.
 
 ```sh
 python predict.py --dataset YOUR HIGH-QUALITY-SUBCOSTAL-480640 DATASET --manifest_path YOURMANIFEST CSV --label SLD (OR cirrhosis)
 ```
 
-Finally, you get cirrhosis / SLD preds and can calculate AUC.
+Fin.
