@@ -44,9 +44,9 @@ See sample_manifest_step1_and_2.csv (classify_high_quality_subcostal_videos.py) 
 - 480-640 subcostal echocardiography videos. (corresponding file name should be in output csv from Step 1and2 ) 
 For disease detection model (DenseNet), we used 480-640, not 112-112.
 
-
 In your environment, run this to classify high-quality subcostal. 
 please modify sample_manifest_step1_and_2.csv to your dataset manifest
+
 ```sh
 python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --manifest_path YOURMANIFEST PATH.csv
 ```
@@ -54,7 +54,7 @@ python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --m
 Then, you need run below to Predict Cirrhosis or SLD (predict.py). Then you can calculate AUC in your dataset.
 
 ```sh
-python predict.py --dataset YOUR HIGH-QUALITY-SUBCOSTAL-480640 DATASET --manifest_path YOURMANIFEST CSV --label SLD (OR cirrhosis)
+python predict.py --dataset YOUR HIGH-QUALITY-SUBCOSTAL-480640 DATASET --label (SLD OR cirrhosis)
 ```
 
 Fin.
