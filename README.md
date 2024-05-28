@@ -44,7 +44,7 @@ See sample_manifest_step1_and_2.csv
 - 480-640 subcostal echocardiography videos. (corresponding file name should be in output csv from Step 1and2 ) 
 For disease detection model (DenseNet), we used 480-640, not 112-112.
 
-![Procedure](https://github.com/echonet/liver/blob/main/repo_EchoNet_Pipeline.png)
+![Procedure](https://github.com/echonet/liver/blob/main/repo_EchoNet_Pipeline_resize.png)
 In your environment, run this to classify high-quality subcostal.
 ```sh
 python classify_high_quality_subcostal_videos.py --dataset YOUR DATASET PATH --manifest_path YOURMANIFEST PATH.csv
