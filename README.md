@@ -8,9 +8,12 @@ Echocardiography, widely used in the clinic and tertialy center, can provide val
 ![EchoNet-Liver Pipeline](https://github.com/echonet/liver/blob/main/EchoNetLiver0617.png)
 
 
-**Presentation:** Conference information will be updated.  
+**Presentation:**: 2024 AHA Chicago. Yuki Sahashi. Opportunistic Screening of Chronic Liver Disease With Deep Learning Enhanced Echocardiography 
+Co-author: Milos Vukadinovic, Fatemeh Amrollahi, Hirsh Trivedi, Justin Rhee, Jonathan Chen, Susan Cheng, David Ouyang*, Alan C. Kwan* (Equal contribution)
 
-**Preprint:** link will be added once preprint is released
+**Preprint:** Sahashi Y, Vukadinovic M, Amrollahi F, Trivedi H, Rhee J, Chen J, Cheng S, Ouyang D, Kwan AC. Opportunistic Screening of Chronic Liver Disease with Deep Learning Enhanced Echocardiography. medRxiv. 2024 Jun 14:2024.06.13.24308898. doi: 10.1101/2024.06.13.24308898.
+
+**Paper:** link will be added once preprint is released
 
 ### Prerequisites
 
