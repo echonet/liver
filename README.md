@@ -1,4 +1,4 @@
-# EchoNet-Liver : Highthroughput approach for detecting chronic liver disease using echocardiography
+# EchoNet-Liver : High throughput approach for detecting chronic liver disease using echocardiography
 
 Chronic liver disease affects 1.5 billion people worldwide, often leading to severe health outcomes. Despite increasing prevalence, most patients remain undiagnosed. Various screening methods (like CT, MRI and liver biopsy) exist, but barriers like cost and availability limit their use.
 
