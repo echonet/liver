@@ -5,7 +5,7 @@ Chronic liver disease affects 1.5 billion people worldwide, often leading to sev
 Echocardiography, widely used in the clinic and tertialy center, can provide valuable information about liver tissue through subcostal views as well as cardiac structures. Deep learning applied to these echocardiographic images have been developed to detect cardiovascular diseases and predict disease progression. 
 **Echo-Net-Liver**, a deep-learning algorithm pipeline, is developed to identify chronic liver disease (particularly steatotic liver disease (SLD) and cirrhosis), using subcostal echocardiographic images. Opportunistic liver disease screening using AI-guided echocardiography may contribute to early detection and patient care by utilizing existing procedures.
 
-![EchoNet-Liver Pipeline]([https://github.com/echonet/liver/blob/main/EchoNetLiver0617.png](https://github.com/echonet/liver/blob/main/EchoNet_Liver_Figure_github.png))
+![EchoNet-Liver Pipeline](https://github.com/echonet/liver/blob/main/EchoNet_Liver_Figure_github.png)
 
 
 **Presentation:**: 2024 AHA Chicago. Yuki Sahashi. Opportunistic Screening of Chronic Liver Disease With Deep Learning Enhanced Echocardiography 
