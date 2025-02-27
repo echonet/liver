@@ -13,7 +13,8 @@ Co-author: Milos Vukadinovic, Fatemeh Amrollahi, Hirsh Trivedi, Justin Rhee, Jon
 
 **Preprint:** Sahashi Y, Vukadinovic M, Amrollahi F, Trivedi H, Rhee J, Chen J, Cheng S, Ouyang D, Kwan AC. Opportunistic Screening of Chronic Liver Disease with Deep Learning Enhanced Echocardiography. medRxiv. 2024 Jun 14:2024.06.13.24308898. doi: 10.1101/2024.06.13.24308898.
 
-**Paper:** link will be added once preprint is released
+**Paper:** [Sahashi Y, Vukadinovic M, Amrollahi F, Trivedi H, Rhee J, Chen J, Cheng S, Ouyang D, Kwan AC. Opportunistic Screening of Chronic Liver Disease with Deep Learning Enhanced Echocardiography. NEJM AI 2025;2(3)
+DOI: 10.1056/AIoa2400948](https://ai.nejm.org/doi/full/10.1056/AIoa2400948?query=ai_toc)
 
 ### Prerequisites
 
