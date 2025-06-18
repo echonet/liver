@@ -1,2 +1,6 @@
 *__pycache__*
 *ipynb*
+*.csv
+*.db
+*.xlsx
+*.json

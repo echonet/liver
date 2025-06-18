@@ -33,6 +33,15 @@ cd EchoNet-Liver
 pip install -r requirements.txt
 ```
 
+This repository uses Git Large File Storage (Git LFS) to manage large files (model weights). A simple git clone will only download placeholder files (around 4KB each) instead of the actual ckpt large files.
+
+```sh
+(sudo) apt update
+(sudo) apt install git-lfs
+git lfs install
+git lfs pull
+```
+
 There are three models for Echo-Net Liver pipeline
 1. View-classification model
 2. Quality-control model
