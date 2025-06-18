@@ -2,20 +2,22 @@ import sys
 import numpy as np
 import pandas as pd
 import os
+from pathlib import Path
+from tqdm import tqdm
+import glob
+import cv2
+import argparse
+
+from sklearn.utils import resample
+from sklearn.metrics import roc_auc_score, confusion_matrix, precision_recall_curve, auc, roc_curve
+
 import torch
 from lightning_utilities.core.imports import compare_version
 from pytorch_lightning import Trainer
 from torch.utils.data import DataLoader
-from utils import sensivity_specifity_cutoff, sigmoid, EchoDataset,get_frame_count
-import glob
 from torchvision.models import densenet121
-import cv2
-import argparse
 
-from pathlib import Path
-from tqdm import tqdm
-from sklearn.utils import resample
-from sklearn.metrics import roc_auc_score, confusion_matrix, precision_recall_curve, auc, roc_curve
+from utils import sensivity_specifity_cutoff, sigmoid, EchoDataset,get_frame_count
 
 with torch.no_grad():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -48,7 +50,7 @@ with torch.no_grad():
     
     #--------------------------------------------------
     #Step: Opportunistic Liver Disease Screening
-    print('--- Step: AI-guided Liver disease Opportunistic Screening'---)
+    print('--- Step: AI-guided Liver disease Opportunistic Screening---')
     print("Prediction LABEL: ", args.label)
    
     test_ds = EchoDataset(

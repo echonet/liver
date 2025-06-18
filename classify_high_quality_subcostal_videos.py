@@ -4,21 +4,21 @@ import pandas as pd
 import os
 import shutil
 import torch
+from tqdm import tqdm
+from pathlib import Path
+import argparse
+import cv2
+
 from lightning_utilities.core.imports import compare_version
 from pytorch_lightning import Trainer
 from torch.utils.data import DataLoader
 from torchvision.models.video import r2plus1d_18
 
-import argparse
-from pathlib import Path
 from sklearn.metrics import roc_auc_score, confusion_matrix,roc_curve
-from tqdm import tqdm
-import cv2
+
 from utils import sensivity_specifity_cutoff, sigmoid, EchoDataset, get_frame_count
 
-
-#RUN CHECK ON Yuki's environment (as of 2024-05-30) Using SHC external dataset
-
+#RUN CHECK ON our environment (as of 2024-05-30)
 
 with torch.no_grad():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
